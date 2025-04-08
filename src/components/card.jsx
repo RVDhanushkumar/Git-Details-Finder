@@ -53,7 +53,7 @@ function Card(props) {
             {commits.map((commit, index) => (
               <li key={index} className="bg-blue-900 p-2 rounded-md">
                 <p>✍️ <strong>Author:</strong> {commit.commit.author.name}</p>
-                <p>💬 <strong>Message:</strong> {commit.commit.message}</p>
+                <p>💬 <strong>Message:</strong> {commit.message}</p>
               </li>
             ))}
           </ul>

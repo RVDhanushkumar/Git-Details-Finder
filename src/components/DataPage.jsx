@@ -44,6 +44,7 @@ function DataPage() {
           {data.map((item) => (
             <Card
               key={item.id}
+              username = {username}
               name={item.name}
               id={item.id}
               description={item.description}
