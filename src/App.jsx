@@ -19,11 +19,11 @@ function App() {
     <div>
       <div className="bg-white dark:bg-gray-900 shadow-xl rounded-2xl p-8 sm:p-10 w-full max-w-lg transition-all duration-300">
         <div className="flex justify-center mb-6">
-          <img src={github} className="h-12 w-20 mr-2 animate-pulse" alt="GitHub Logo" />
+          <img src={github} className="h-12 w-12 mr-2 animate-pulse" alt="GitHub Logo" />
         </div>
 
         <h1 className="text-4xl font-extrabold text-center text-red-600 dark:text-red-400 mb-8">
-          GitHub User Finder
+          User Profile Analyzer
         </h1>
 
         <div className="mb-6">
