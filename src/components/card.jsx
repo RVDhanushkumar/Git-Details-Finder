@@ -49,7 +49,7 @@ function Card(props) {
         {err && <p className="text-red-400 mt-2">{err}</p>}
 
         {commits.length > 0 ? (
-          <div className="list-disc list-inside ml-4 mt-2 space-y-2">
+          <div className="ml-4 mt-2 space-y-2">
             {commits.map((commit, index) => (
               <li key={index} className="bg-blue-900 p-2 rounded-md">
                 <p>✍️ <strong>Author:</strong> {commit.commit.author.name}</p>
