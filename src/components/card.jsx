@@ -38,7 +38,7 @@ function Card(props) {
       <p className="text-blue-200 mb-2">{props.description || "No description provided."}</p>
 
       <div className="flex flex-wrap gap-3 text-sm text-blue-100 mb-4">
-        <span className="bg-blue-800 px-2 py-1 rounded-lg">🧵 Size: {props.size}</span>
+        <span className="bg-blue-800 px-2 py-1 rounded-lg">🧵 Size: {props.size} KB</span>
         <span className="bg-blue-800 px-2 py-1 rounded-lg">💬 Language: {props.language || "Unknown"}</span>
         <span className="bg-blue-800 px-2 py-1 rounded-lg">📅 Created: {formattedDate}</span>
       </div>
