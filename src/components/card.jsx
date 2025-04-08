@@ -21,7 +21,7 @@ function Card(props) {
         );
         setCommits(res.data.slice(0, 5)); 
       } catch (err) {
-        setErr("❌ Error fetching commits");
+        setErr("Error fetching commits (or) Limit exceeds");
       }
     };
 
