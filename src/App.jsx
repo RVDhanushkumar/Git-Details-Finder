@@ -16,8 +16,8 @@ function App() {
   };
 
   return (
-    <div>
-      <div className="bg-white dark:bg-gray-900 shadow-xl rounded-2xl p-8 sm:p-10 w-full max-w-lg transition-all duration-300">
+    <div className="grid place-content-center h-[90vh]">
+      <div className="bg-gray-800 shadow-xl rounded-2xl p-8 sm:p-10 w-full max-w-lg transition-all duration-300 ">
         <div className="flex justify-center mb-6">
           <img src={github} className="h-12 w-12 mr-2 animate-pulse" alt="GitHub Logo" />
         </div>

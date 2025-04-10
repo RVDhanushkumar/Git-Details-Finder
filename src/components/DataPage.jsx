@@ -31,20 +31,21 @@ function DataPage() {
   }, [username]);
 
   return (
-    <div className="bg-blue-950 text-white py-10 px-4 flex flex-col items-center rounded-2xl">
-      <h2 className="text-3xl font-bold text-blue-200 mb-8">
+    <>
+    <div className="bg-blue-950 text-white py-8 flex flex-col items-center rounded-2xl w-[100%] m-2">
+      <h2 className="text-3xl font-bold text-blue-200 ">
         🔍 GitHub Data for: {username || "Unknown User"}
       </h2>
-
-      {err && <p className="text-red-400 mb-4">{err}</p>}
+    </div>
+    {err && <p className="text-red-400 mb-4">{err}</p>}
       {loading ? (
         <h1 className="text-xl text-blue-300">Loading...</h1>
       ) : (
-        <div className="w-full flex flex-col gap-6 items-center">
+        <div className="w-full flex flex-col gap-6 items-center ">
           {data.map((item) => (
             <Card
               key={item.id}
-              username = {username}
+              username={username}
               name={item.name}
               id={item.id}
               description={item.description}
@@ -55,8 +56,8 @@ function DataPage() {
           ))}
         </div>
       )}
-    </div>
-  );
+    </>
+  );  
 }
 
 export default DataPage;
