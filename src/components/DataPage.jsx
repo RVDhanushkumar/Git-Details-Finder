@@ -37,6 +37,8 @@ function DataPage() {
         🔍 GitHub Data for: {username || "Unknown User"}
       </h2>
     </div>
+    
+
     {err && <p className="text-red-400 mb-4">{err}</p>}
       {loading ? (
         <h1 className="text-xl text-blue-300">Loading...</h1>

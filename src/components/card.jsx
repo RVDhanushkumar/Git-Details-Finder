@@ -31,43 +31,58 @@ function Card(props) {
 
   return (
     <motion.div
-      className="bg-blue-900 shadow-md rounded-2xl p-4 w-[80%] mx-auto hover:shadow-xl transition duration-300 border border-blue-700"
+      className="bg-blue-950 shadow-xl rounded-2xl p-6 w-[85%] mx-auto border border-blue-800 hover:shadow-2xl transition-all duration-300 my-6"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: "easeOut" }}
     >
-      <div className="flex items-center justify-between my-4">
-        <h2 className="text-xl font-semibold text-blue-100">📁 {props.name}</h2>
-        <span className="text-sm text-blue-300">ID: {props.id}</span>
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-2xl font-semibold text-blue-100">📁 {props.name}</h2>
+        <span className="text-sm text-blue-400 font-mono">ID: {props.id}</span>
       </div>
 
-      <p className="text-blue-200 my-4">{props.description || "No description provided."}</p>
-      <div className="w-full grid place-content-center">
-        <div className="flex flex-wrap gap-3 text-sm text-blue-100 my-6">
-          <span className="bg-blue-800 px-2 py-1 rounded-lg">🧵 Size: {props.size} KB</span>
-          <span className="bg-blue-800 px-2 py-1 rounded-lg">💬 Language: {props.language || "Unknown"}</span>
-          <span className="bg-blue-800 px-2 py-1 rounded-lg">📅 Created: {formattedDate}</span>
+      <p className="text-blue-200 text-base mb-6">
+        {props.description || "No description provided."}
+      </p>
+
+      <div className="flex justify-center">
+        <div className="flex flex-wrap gap-3 text-sm text-blue-100 mb-6 justify-center">
+          <span className="bg-blue-800/70 px-3 py-1 rounded-full shadow-inner">
+            🧵 Size: {props.size} KB
+          </span>
+          <span className="bg-blue-800/70 px-3 py-1 rounded-full shadow-inner">
+            💬 Language: {props.language || "Unknown"}
+          </span>
+          <span className="bg-blue-800/70 px-3 py-1 rounded-full shadow-inner">
+            📅 Created: {formattedDate}
+          </span>
         </div>
       </div>
 
-      <details className="bg-blue-800 rounded-lg px-4 py-2 text-sm text-blue-100 cursor-pointer">
-        <summary className="font-medium text-blue-300 mb-1 hover:text-white transition duration-200">
+
+      <details className="bg-blue-900/70 rounded-lg px-4 py-3 text-sm text-blue-100 group transition-all duration-300">
+        <summary className="font-medium text-blue-300 cursor-pointer group-hover:text-white group-hover:bg-blue-700 px-2 py-1 rounded-md transition duration-300">
           📜 View Commits
         </summary>
 
         {err && <p className="text-red-400 mt-2">{err}</p>}
 
         {commits.length > 0 ? (
-          <div className="ml-4 mt-2 space-y-2">
+          <ul className="mt-4 space-y-3 pl-4">
             {commits.map((commit, index) => (
-              <li key={index} className="bg-blue-900 p-2 rounded-md">
-                <p>✍️ <strong>Author:</strong> {commit.commit.author.name}</p>
-                <p>💬 <strong>Message:</strong> {commit.commit.message}</p>
+              <li key={index} className="bg-blue-950/70 border border-blue-800 rounded-md p-3 text-sm shadow-sm flex justify-around flex-row-reverse">
+                <p className="text-blue-200">
+                  💬 <strong className="text-blue-100">Message:</strong> {commit.commit.message}
+                </p>
+                <p className="text-blue-200 mb-1">
+                  ✍️ <strong className="text-blue-100">Author:</strong> {commit.commit.author.name}
+                </p>
+                
               </li>
             ))}
-          </div>
+          </ul>
         ) : !err ? (
-          <p className="text-blue-200 mt-2">No commits found.</p>
+          <p className="text-blue-300 mt-2">No commits found.</p>
         ) : null}
       </details>
     </motion.div>
